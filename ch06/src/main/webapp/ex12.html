@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	/**
+	 * DOM Event 종류
+	 1. 마우스
+	 	- mousedown, mouseup, click, dblclick
+	 	- mouseover, mouseout
+	 2. 키보드
+	 	- keydown, keyup, keypress
+	 3. form
+	 	- submit
+	 4. input
+	 	- focus, blur, change, input
+	 5. touch(모바일)
+	 	- touchstart, touchend, touchmove
+	 	
+	 	
+ 	용어 정리
+ 	1. Event Name
+ 		- load, click, mousedown,...
+ 	2. Event attribute
+ 		- DOM Event Model Level0
+ 		- ex) onload, onclick, onmousedown
+ 	3. Event Listner
+ 		- DOM Event Modle Level2
+ 		- function(){}
+ 	4. Event Model
+ 		- DOM의 HTMLElement의 event handler를 설정하는 방법에 대한 표준
+		- DOM Event Model Level0
+			: Inline
+				태그 안에 javascript code 삽입
+			: Basic(고전적인 이벤트 처리 방식, 기본 이벤트 처리 방식)
+				element.onclick = function(){}
+ 		- DOM Event Model Level2
+ 			Observer 패턴을 적용하여 Listener를 등록하는 방식
+ 			Listener를 등록/제거하는 함수를 제공해야한다.
+ 			다중 EventHandler 등록 가능
+ 			: MS IE(<=8) - attachEvent/detachEvent
+ 			: standards - addEventListener/removeEventListener
+ 		- 
+ 	*/
+</script>
+</head>
+<body>
+	<h1>DOM(Document Object Model)</h1>
+	<h2>5. Event 처리</h2>
+	<h3 id='header'>Click!</h3>
+	<script type="text/javascript">
+	var registerEventHandler = function(el, eventName, eventHandler){
+		el && el.attachEvent && el.attachEvent.call(el, 'on' + eventName, eventHandler)
+		
+		el && el.addEventListener && el.addEventListener.call(el, eventName, eventHandler)
+	}
+	var clickEventHandler1 = function(){
+		console.log('click1')
+	}
+	
+	
+	window.addEventListener('load', function(){
+		var el = document.getElementById('header')
+		
+		registerEventHandler(el, "click", clickEventHandler1)
+		registerEventHandler(el, 'click', function(){
+			console.log('click2')
+		})
+	})
+		
+	</script>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	/**
+	 * DOM Event 종류
+	 1. 마우스
+	 	- mousedown, mouseup, click, dblclick
+	 	- mouseover, mouseout
+	 2. 키보드
+	 	- keydown, keyup, keypress
+	 3. form
+	 	- submit
+	 4. input
+	 	- focus, blur, change, input
+	 5. touch(모바일)
+	 	- touchstart, touchend, touchmove
+	 	
+	 	
+ 	용어 정리
+ 	1. Event Name
+ 		- load, click, mousedown,...
+ 	2. Event attribute
+ 		- DOM Event Model Level0
+ 		- ex) onload, onclick, onmousedown
+ 	3. Event Listner
+ 		- DOM Event Modle Level2
+ 		- function(){}
+ 	4. Event Model
+ 		- DOM의 HTMLElement의 event handler를 설정하는 방법에 대한 표준
+		- DOM Event Model Level0
+			: Inline
+				태그 안에 javascript code 삽입
+			: Basic(고전적인 이벤트 처리 방식, 기본 이벤트 처리 방식)
+				element.onclick = function(){}
+ 		- DOM Event Model Level2
+ 			Observer 패턴을 적용하여 Listener를 등록하는 방식
+ 			Listener를 등록/제거하는 함수를 제공해야한다.
+ 			다중 EventHandler 등록 가능
+ 			: MS IE(<=8) - attachEvent/detachEvent
+ 			: standards - addEventListener/removeEventListener
+ 		- 
+ 	*/
+</script>
+</head>
+<body>
+	<h1>DOM(Document Object Model)</h1>
+	<h2>6. Default Event Handler 동작 막기 - 2. form : DOM Event Model Level2</h2>
+	
+	<form id='form-login' method='post' action="/user/auth">
+		<input type='text' name='email' id='input-email' placeholder='이메일'/>
+		<br/>
+		<input type='password' name='password' id='input-password' placeholder='비밀번호'/>
+		<br/>
+		<input type='submit' value='로그인'/>
+	</form>
+	<script type="text/javascript">
+		window.addEventListener('load', function(){
+			document
+				.getElementById('form-login')
+				.addEventListener('submit', function(e){
+					e.preventDefault();
+					let inputEmail = document.getElementById('input-email');				
+					alert(!inputEmail.value)
+					if(!inputEmail.value) {
+						alert('이메일이 비어 있습니다.');
+						inputEmail.focus();
+						return;
+					}
+					let inputPassword = document.getElementById('input-password');
+					if(!inputPassword.value){
+						alert('비밀번호가 비어있습니다')
+						inputPassword.focus();
+						return;
+					}
+					
+					this.submit();
+				}) 
+		})		
+	</script>
+</body>
+</html>

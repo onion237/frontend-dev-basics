@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<script type="text/javascript">
+	$(function(){
+		setTimeout(() => {
+			$('#first,#third').css({
+				fontWeight: 'bold'  
+			})
+		})		
+	})
+</script>
+</head>
+<body>
+	<h1>선택자 - 그룹선택자</h1>
+		<ul>
+			<li id="first"> 텍스트 텍스트 텍스트 텍스트 텍스트 </li>
+			<li id="second"> 텍스트 텍스트 텍스트 텍스트 텍스트 </li>
+			<li id="third"> 텍스트 텍스트 텍스트 텍스트 텍스트 </li>
+			<li id="fourth"> 텍스트 텍스트 텍스트 텍스트 텍스트 </li>
+		</ul>
+	</body>
+</html>

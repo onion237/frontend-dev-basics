@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<script type="text/javascript">
+	$(function() {
+		$("li[id]").css("color", "red");
+		$("li[class]").css("color", "blue");
+		$("li[id='third']").css("text-decoration", "underline");
+	});
+</script>
+</head>
+<body style="overflow-y: scroll">
+	<h1>선택자 - 속성 선택자</h1>
+	<ul>
+		<li id="first">텍스트 텍스트 텍스트 텍스트 텍스트</li>
+		<li class="second">텍스트 텍스트 텍스트 텍스트 텍스트</li>
+		<li id="third">텍스트 텍스트 텍스트 텍스트 텍스트</li>
+		<li class="fourth">텍스트 텍스트 텍스트 텍스트 텍스트</li>
+	</ul>
+</body>
+</html>

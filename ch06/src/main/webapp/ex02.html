@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>BOM(Browser Object Model)</h1>
+	<h2>1. window 전역 객체(Global Object)</h2>
+	<ul>
+		<li>자바스크립트가 브라우저 창(window)을 제어하기 위한 객체</li>
+		<li>자바스크립트 실행과 관련된 환경정보에 접근이 가능한 객체(Environments, Variable
+			Object)</li>
+	</ul>
+	<script type="text/javascript">
+		var number = 10;
+		console.log(number, window.number)
+		
+		setTimeout(() => {
+			let popup = window.open('popup.html', 'popup','width=600,height=400')
+			console.dir(popup)
+			setTimeout(() => {				
+				// popup(자식창)의 내용 바꾸기
+				// 보안 정책(Cross Domain관련) 상 같은 도메인에서만 조작 가능 
+				popup.document.write('<h1>popup text changed</h1>')
+			}, 2000)
+			
+			
+			setTimeout(() => {				
+				// popup(자식창)의 JavaScript실행
+				// 보안 정책(Cross Domain관련) 상 같은 도메인에서만 조작 가능 
+				popup.message()
+			}, 3000)
+		
+			setTimeout(() => {				
+				// popup(자식창)의 JavaScript실행
+				// 보안 정책(Cross Domain관련) 상 같은 도메인에서만 조작 가능 
+				popup.moveBy(200,200)
+			}, 4000)
+			
+		},2000)
+	</script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script type="text/javascript"
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+		setTimeout(function() {
+			/*
+			
+			$('h1 a')
+				.attr('href','http://www.douzone.com')
+				.attr('title', '우리회사 가기')
+				.attr('target', 'blank')
+			*/
+			$('h1 a')
+				.attr({
+					href : "http://www.douzone.com",
+					title : "우리회사 기기",
+					target : "blank"
+				})
+		}, 1000)
+	});
+</script>
+</head>
+<body>
+
+	<h1>DOM 조작 API - attr()</h1>
+	<h1><a href="">우리회사</a></h1>
+</body>
+</html>

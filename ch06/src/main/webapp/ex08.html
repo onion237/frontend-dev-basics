@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	/**
+	 * 용어 정리
+	 1. 태그(Tag)
+	 - HTML 문서 안에서 텍스트나 콘텐츠를 정의할 때 사용하는 마크업
+	 2. 문서 객체(Document Object)
+	 - DOM(Document Object Model)
+	 - 구현 Tree의 구성 노드 타입은 HTMLElement이다.
+	 - JavaScript에서 접근하고 조작하게 된다
+	 3. 노드(Node)
+	 - DOM Tree의 각각의 요소
+	 */
+</script>
+</head>
+<body>
+	<h1 id='h' data-no='10'>DOM(Document Object Model)</h1>
+	<h2>3. HTML Element 속성 조작하기</h2>
+	
+	<script type="text/javascript">
+		window.addEventListener('load', function(){
+			
+			var imgEl = document.createElement('img');
+			imgEl.setAttribute('src', 'https://t1.daumcdn.net/cfile/tistory/9917534C5F4F8F5E12')
+			imgEl.setAttribute('style',"width = 200px")
+			imgEl.setAttribute('alt', 'Google')
+			imgEl.setAttribute('title', 'Google')
+			
+			// 비표준 attribute는 property로 변환되지 않음
+			imgEl.setAttribute('data-no', 10)
+			
+			//imgEl['data-no'] = 10 비표준 property를 임의로 넣은 것임, attributes에는 setting되지 않음
+			
+			
+			setTimeout(function(){
+				document.body.appendChild(imgEl);
+			}, 3000)
+			
+		})
+	</script>
+</body>
+</html>

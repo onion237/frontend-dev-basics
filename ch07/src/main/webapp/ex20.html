@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<script type="text/javascript">
+	$(function() {
+		setTimeout(() => {
+			$("#p1").text("1. 안녕하세요")
+			$("#p2").html("<strong>2. 안녕하세요</strong>")
+			console.log($('#p3').text())
+			console.log($('#p4').text())
+			console.log($('#p4').html())
+		}, 1000);
+	});
+	
+	
+</script>
+</head>
+<body>
+	<h1>DOM 조작 API - text()</h1>
+	<p id="p1">&lt; abcd &gt;</p>
+	<p id="p2">...</p>
+	<p id="p3">3. 안녕하세요</p>
+	<p id="p4">4. <strong>안녕하세요</strong>라고 인사하면 <em>쌩</em>깐다. </p>
+	<!-- 
+		HTML의 escape 문자들
+		& -> &amp;
+		space -> &nbsp;
+		< -> &lt;
+		> -> &gt;
+		' -> &quot;
+	 -->
+	<h4>Black &amp White</h4>
+</body>
+</html>

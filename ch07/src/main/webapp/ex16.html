@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<script type="text/javascript">
+	$(function() {
+		$("li:even").css("color", "blue"); // 0, 2,...
+		$("li:odd").css("color", "red"); // 1, 3,...
+	});
+</script>
+</head>
+<body>
+	<h1>선택자 - jQuery Filter</h1>
+	<ul>
+		<li class="blue">텍스트 텍스트 텍스트 텍스트 텍스트</li>
+		<li class="normal">텍스트 텍스트 텍스트 텍스트 텍스트</li>
+		<li>텍스트 텍스트 텍스트 텍스트 텍스트</li>
+		<li>텍스트 텍스트 텍스트 텍스트 텍스트</li>
+	</ul>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<script type="text/javascript">
+	$(function() {
+		$("li > strong").css("color", "red");
+		$("ul > li > div > strong").css("color", "blue");
+	});
+</script>
+</head>
+<body>
+	<h1>선택자 - 자식 선택자</h1>
+	<ul>
+		<li><strong> 텍스트</strong> 텍스트 텍스트 텍스트 텍스트</li>
+		<li>텍스트 텍스트 텍스트 텍스트 텍스트</li>
+		<li>
+			<div>
+				<strong> 텍스트 </strong> 텍스트 텍스트 텍스트 텍스트 <span> 텍스트 </span>
+			</div>
+		</li>
+		<li>텍스트 텍스트 텍스트 텍스트 텍스트</li>
+	</ul>
+</body>
+</html>

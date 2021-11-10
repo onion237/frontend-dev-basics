@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<script type="text/javascript">
+	$(function() {
+		setTimeout(() => {
+			var html = '<p id="p1">내용입니다.</p>'
+			$('#title').after(html)
+		}, 1000);
+	});
+	
+	
+</script>
+</head>
+<body>
+	<h1>DOM 조작 API - after()</h1>
+	<h2 id='title'>제목입니다.</h2>
+	
+</body>
+</html>
